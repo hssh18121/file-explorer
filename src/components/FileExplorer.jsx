@@ -1,19 +1,13 @@
 import Folder from "./Folder";
-import fileStructure from "../data/fileStructure";
-import File from "./File";
+import { useFileExplorer } from "../context/FIleStructureContext";
 
 const FileExplorer = () => {
+  const { fileStructure } = useFileExplorer();
   return (
     <div>
       <h2 className="file-explorer-title">File Explorer</h2>
       <div className="file-explorer">
-        {Object.entries(fileStructure).map(([name, content]) =>
-          typeof content === "object" && content !== null && Object.keys(content).length > 0 ? (
-            <Folder key={name} name={name} content={content} isNested={false} />
-          ) : (
-            <File key={name} name={name} isNested={false} />
-          )
-        )}
+        <Folder name={fileStructure.name} children={fileStructure.children} isNested={false} path={fileStructure.name}/>
       </div>
     </div>
   );

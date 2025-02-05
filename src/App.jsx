@@ -15,19 +15,20 @@ function App() {
         </div>
 
         {/* Right Content Area - File Display */}
-        <div style={{ flexGrow: 1, padding: "20px" }} className='main'>
+        <div className='main'>
           {activeFile ? (
             <div>
               {/* File Tab */}
               <div
                 style={{
                   padding: "10px",
-                  borderBottom: "1px solid #ddd",
+                  color: "#fcc419",
+                  borderBottom: "2px solid #fcc419",
                   fontWeight: "bold",
                   backgroundColor: "rgba(0, 0, 0, 0.5)",
                 }}
               >
-                {activeFile}
+                {activeFile.trim().split("/").pop()}
               </div>
 
               {/* File Content */}
@@ -36,7 +37,7 @@ function App() {
               </div>
             </div>
           ) : (
-            <div style={{ color: "#999", fontSize: "16px" }}>Select a file to view its content</div>
+            <div style={{ color: "#999", fontSize: "16px", padding: "20px" }}>Select a file to view its content</div>
           )}
         </div>
       </div>
