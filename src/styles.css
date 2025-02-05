@@ -1,3 +1,4 @@
+/* GENERAL */
 * {
     margin: 0;
     padding: 0;
@@ -8,10 +9,10 @@ html {
     font-size: 62.5%;
 }
 
+/* LAYOUT */
 .container {
     display: flex;
     flex-direction: row;
-    /* width: 150rem; */
     margin: 0 auto;
 }
 
@@ -22,21 +23,19 @@ html {
     background: #333;
     color: #fff;
     min-height: 100vh;
-    /* border-radius: 4px; */
     border:1px solid #777;
 }
 
 .sidebar {
     padding: 5px;
-    /* flex-grow: 1; */
     min-width: 400px;
 }
 
 .main {
     flex-grow: 1;
-    /* min-width: 840px; */
 }
 
+/* FILE EXPLORER */
 .file-explorer-container {
     width: 25rem;
     height: 100vh;
@@ -60,12 +59,54 @@ html {
 
 .file-explorer {
     text-align: left;
-    /* padding-left: 1.5rem; */
 }
 
-.folder, .file {
+/* FOLDER */
+.folder {
+    text-align: left;
     padding: 2px;
     font-size: 1.25rem;
     display: block;
-    /* padding-left: 1.5rem; */
+    cursor: "pointer";
+    font-weight: bold;
 }
+
+.folder-toggle {
+    display: flex; 
+    align-items: center; 
+    gap: 5px; 
+    cursor: pointer;
+}
+
+.folder-add-popup {
+    position: absolute;
+    background-color: #1a1a1a;
+    border: 1px solid gray;
+    padding: 0.5rem;
+    z-index: 1000;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.folder-add-popup-block {
+    padding: 5px; 
+    cursor: pointer;
+}
+
+.folder-add-icon-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+    cursor: pointer;
+}
+
+
+/* FILE */
+.file {
+    text-align: left;
+    padding: 2px;
+    font-size: 1.25rem;
+    display: block;
+    cursor: "pointer";
+    font-weight: normal;
+}
+
